@@ -1,1 +1,60 @@
-* Git Best Practices
+* Project Management Best Practices
+
+** we develop trunk based
+
+*** active release branches for older major versions will be supported
+*** a release branch is considered active, if it is in productive use
+    When an active release branch is not used anymore, further support will be
+    provided for a grace period, after which the branch will be considered
+    inactive.
+
+*** pull requests are always squashed and rebased onto the mainline
+*** a squashed commit's message and description must match the pull request's
+
+*** features are developed from the mainline
+*** big features should be broken up into small parts
+    These parts should ideally be worked on be one or two persons.
+    Their branches should not live longer than one work week.
+*** features will not be backported to release branches
+
+*** hotfixes are developed from the mainline
+*** hotfixes will be backported to all active release branches
+
+** we follow semver
+
+*** hotfixes raise the patch version (2.4.7 => 2.4.8)
+    This applies also to active release branches when backporting bugfixes.
+*** features raise the minor version (3.1.12 => 3.2.0)
+*** features with breaking changes raise the major version (5.3.7 => 6.0.0)
+*** every release must be tagged
+
+** we practice ci/cd
+
+*** each branch must be reviewed before landing (pull request)
+*** each branch must pass all tests before landing
+*** deployment after a landing should be seamless (not visible to users)
+    For write access this can be achieved by utilizing CQRS and eventual
+    consistency.
+*** each branch must be deployable on a separate testing stage
+    In some cases acceptance tests by humans must be performed. In such cases
+    a project must be deployable to a temporary stage with all its dependencies
+    to a working state.
+
+** ticket system
+
+*** changes must be documented in the form of tickets
+*** reasoning for changes must be provided in the tickets (as granular as reasonable)
+*** tickets should be connected to relevant other tickets
+*** landed commits must reference at least one ticket
+*** resolving multiple (not directly related) tickets in one pull request shold be avoided
+
+** document versioning should utilize pull requests
+
+** notes
+
+*** many breaking changes in big features
+    It might happen that many breaking changes will contribute to one major
+    change in a service. This will make the major version go up quickly.
+    This is to be expected and not a problem.
+    To communicate this to outsiders in a less "intimidating" way, "major-major"
+    versions can be given a speaking name or something similar.

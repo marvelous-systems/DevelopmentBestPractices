@@ -28,6 +28,9 @@
 *** features with breaking changes raise the major version (5.3.7 => 6.0.0)
 *** every release must be tagged
 
+*** a version representation must match the specification at https://semver.org/ and be prefixed with a "v"
+    E.g. v0.0.1, v2.7.135 or v666.42.69
+
 ** we practice ci/cd
 
 *** each branch must be reviewed before landing (pull request)

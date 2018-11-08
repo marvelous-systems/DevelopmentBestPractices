@@ -25,17 +25,17 @@
 
 ** we follow semver
 
-    - hotfixes raise the patch version (2.4.7 => 2.4.8)
+    - hotfixes raise the patch version (=v2.4.7 => v2.4.8=)
 
         This applies also to active release branches when backporting bugfixes.
 
-    - features raise the minor version (3.1.12 => 3.2.0)
-    - features with breaking changes raise the major version (5.3.7 => 6.0.0)
+    - features raise the minor version (=v3.1.12 => v3.2.0=)
+    - features with breaking changes raise the major version (=v5.3.7 => v6.0.0=)
     - every release must be tagged
 
     - a version representation must match the specification at https://semver.org/ and be prefixed with a "v"
 
-        E.g. v0.0.1, v2.7.135 or v666.42.69
+        E.g. =v0.0.1=, =v2.7.135= or =v666.42.69=
 
 ** we practice ci/cd
 

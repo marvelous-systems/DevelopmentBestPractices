@@ -11,6 +11,10 @@
 
     - pull requests are always squashed and rebased onto the mainline
     - a squashed commit's message and description must match the pull request's
+    - a commit message must be prefixed with either `[TASK]`, `[FEATURE]` or `[BUGFIX]` where
+        - `[FEATURE]` is a new feature
+        - `[TASK]` is work on an existing feature. e.g. changing/removing functionality or refactoring
+        - `[BUGFIX]` is a bugfix (i.e. raising patch version)
 
     - features are developed from the mainline
     - big features should be broken up into small parts

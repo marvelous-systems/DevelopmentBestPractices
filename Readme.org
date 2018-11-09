@@ -1,4 +1,4 @@
-* Project Management Best Practices
+* Development Best Practices
 
 ** we develop trunk based
 

@@ -47,8 +47,7 @@
     - each branch must pass all tests before landing
     - deployment after a landing should be seamless (not visible to users)
 
-        For write access this can be achieved by utilizing CQRS and eventual
-        consistency.
+        For write access to databases during the overlap phase this can be achieved by utilizing CQRS and eventual consistency.
 
     - each branch must be deployable on a separate testing stage
 
